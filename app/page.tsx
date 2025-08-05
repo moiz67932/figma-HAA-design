@@ -11,6 +11,7 @@ import { PricingTable } from "@/components/sections/pricing-table";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { FAQSection } from "@/components/sections/faq-section";
 import { Footer } from "@/components/sections/footer";
+import { AboutSection } from "@/components/sections/about-section";
 import Image from "next/image";
 
 export default function LandingPage() {
@@ -169,6 +170,9 @@ export default function LandingPage() {
 
       {/* Features Grid */}
       <FeaturesGrid />
+
+      {/* About Section */}
+      <AboutSection />
 
       {/* Provider Callout */}
       <ProviderCallout />
