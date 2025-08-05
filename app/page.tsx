@@ -36,8 +36,8 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12">
-                <Image src="/Logo.jpg" alt="Logo" width={48} height={48} />
+              <div className="">
+                <Image src="/Logo.jpg" alt="Logo" width={120} height={120} />
               </div>
             </div>
 
