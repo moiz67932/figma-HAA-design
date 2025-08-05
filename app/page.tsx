@@ -1,28 +1,29 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Menu, X } from "lucide-react"
-import { HeroSection } from "@/components/sections/hero-section"
-import { FeaturesGrid } from "@/components/sections/features-grid"
-import { ProviderCallout } from "@/components/sections/provider-callout"
-import { PricingTable } from "@/components/sections/pricing-table"
-import { TestimonialsSection } from "@/components/sections/testimonials-section"
-import { FAQSection } from "@/components/sections/faq-section"
-import { Footer } from "@/components/sections/footer"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import { HeroSection } from "@/components/sections/hero-section";
+import { FeaturesGrid } from "@/components/sections/features-grid";
+import { ProviderCallout } from "@/components/sections/provider-callout";
+import { PricingTable } from "@/components/sections/pricing-table";
+import { TestimonialsSection } from "@/components/sections/testimonials-section";
+import { FAQSection } from "@/components/sections/faq-section";
+import { Footer } from "@/components/sections/footer";
+import Image from "next/image";
 
 export default function LandingPage() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -36,38 +37,49 @@ export default function LandingPage() {
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12">
-                <svg viewBox="0 0 40 40" className="w-full h-full">
-                  <rect x="8" y="12" width="12" height="8" fill="#0056B3" rx="1" />
-                  <path d="M14 12V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4" stroke="#0056B3" strokeWidth="2" fill="none" />
-                  <rect x="20" y="20" width="12" height="8" fill="#FF7A00" rx="1" />
-                  <path d="M22 32l8-4 8 4v-8l-8 4-8-4z" fill="#0056B3" />
-                  <circle cx="32" cy="24" r="2" fill="#FF7A00" />
-                  <path d="M28 36l4-2 4 2" stroke="#FF7A00" strokeWidth="2" />
-                </svg>
+                <Image src="/Logo.png" alt="Logo" width={48} height={48} />
               </div>
             </div>
 
             <div className="hidden md:flex items-center gap-12">
-              <a href="#home" className="text-gray-700 hover:text-[#0056B3] transition-colors font-medium">
+              <a
+                href="#home"
+                className="text-gray-700 hover:text-[#0056B3] transition-colors font-medium"
+              >
                 Home
               </a>
-              <a href="#features" className="text-gray-700 hover:text-[#0056B3] transition-colors font-medium">
+              <a
+                href="#features"
+                className="text-gray-700 hover:text-[#0056B3] transition-colors font-medium"
+              >
                 Features
               </a>
-              <a href="#pricing" className="text-gray-700 hover:text-[#0056B3] transition-colors font-medium">
+              <a
+                href="#pricing"
+                className="text-gray-700 hover:text-[#0056B3] transition-colors font-medium"
+              >
                 Pricing
               </a>
-              <a href="#about" className="text-gray-700 hover:text-[#0056B3] transition-colors font-medium">
+              <a
+                href="#about"
+                className="text-gray-700 hover:text-[#0056B3] transition-colors font-medium"
+              >
                 About Us
               </a>
-              <a href="#contact" className="text-gray-700 hover:text-[#0056B3] transition-colors font-medium">
+              <a
+                href="#contact"
+                className="text-gray-700 hover:text-[#0056B3] transition-colors font-medium"
+              >
                 Contact
               </a>
             </div>
 
             <div className="hidden md:flex items-center gap-4">
               <Link href="/login">
-                <Button variant="ghost" className="text-gray-700 hover:text-[#0056B3] font-medium">
+                <Button
+                  variant="ghost"
+                  className="text-gray-700 hover:text-[#0056B3] font-medium"
+                >
                   Sign In
                 </Button>
               </Link>
@@ -84,7 +96,11 @@ export default function LandingPage() {
               className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
               aria-label="Toggle mobile menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6 text-gray-600" /> : <Menu className="w-6 h-6 text-gray-600" />}
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6 text-gray-600" />
+              ) : (
+                <Menu className="w-6 h-6 text-gray-600" />
+              )}
             </button>
           </div>
 
@@ -129,7 +145,10 @@ export default function LandingPage() {
                 </a>
                 <div className="flex flex-col gap-2 px-4 pt-4 border-t border-gray-200">
                   <Link href="/login">
-                    <Button variant="ghost" className="w-full text-gray-700 hover:text-[#0056B3] font-medium">
+                    <Button
+                      variant="ghost"
+                      className="w-full text-gray-700 hover:text-[#0056B3] font-medium"
+                    >
                       Sign In
                     </Button>
                   </Link>
@@ -166,5 +185,5 @@ export default function LandingPage() {
       {/* Footer */}
       <Footer />
     </div>
-  )
+  );
 }
